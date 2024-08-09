@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.slick-prev:before {
+  color: #ff6600; /* Change this to your desired color */
+  font-size: 24px; /* Adjust the size if needed */
+}
+.slick-next:before {
+  color: #ff6600; /* Change this to your desired color */
+  font-size: 24px; /* Adjust the size if needed */
+}
+.slick-slide>div{
+
+  margin-right: 12px;
+ 
+ 
+}
+.custom-toast {
+  background-color: black !important;
+  color: white !important;
+ 
+ 
+}
+
+.custom-toast-body {
+  font-size: 1.3vw;
+  font-family: Arial, sans-serif;
+  width: 10vw;
+  
+}
+
+
+*{
+  font-family: Roboto;
+  margin: 0;
+  padding: 0;
+}
+body ,html{
+
+  height: 100%;
+  width: 100%;
+}
+.main{
+  mask-image:linear-gradient(to center, orange, rgba(239, 239, 243, 0));
+}
+
+
+
+/* //responsive section */
+@media (max-width:800px) {
+ .options {
+
+height: 2rem;
+}
+}
+
+@media (max-width:500px) {
+  .admin-menu{
+
+
+  }
+ }
+ @media(max-width:1350px){
+
+.advertisment{
+
+  height: 33vw;
+  
+ 
+
+
+}
+
+
+ }
+
+
+
+
+ @media(max-width:800px){
+
+.theback{
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+.beat{
+
+  font-size: 1.8vw;
+}
+.beat2{
+
+  font-size: 5.6vw;
+}
+.beat3{
+
+  font-size:10.5vw;
+}
+.advertisment{
+
+  height: 70vh;
+  width: 35vw;
+}
+  
+  
+   }
+
+
+   @media (max-width:600px){
+
+.rrr{
+
+  gap:0.6rem;
+}
+.beat3{
+margin-top: 0.4rem;
+  font-size: 11vw;
+}
+
+    
+   }
+
+
+
+   @media (width:425px){
+
+    .advertisment{
+      height: 77vh;
+      width: 43vw;
+    
+    }
+    .beat{
+      font-size: 2vw;
+    }
+   
+
+.productdescription{
+
+  font-size: 4rem;
+}
+   }
+
+   @media (max-width:1024px) {
+
+    .redbutton{
+      height: 2rem;
+    }
+    
+   }
+
+   @media (max-width:900px) {
+
+
+
+
+
+    .productname{
+      font-size: 2.5vw;
+
+    }
+    .productdescription{font-size: 1.4vw;}
+    
+   .detail{
+
+height: 45vw;
+
+
+   }
+   .detailpic{
+height:30vw ;
+
+
+
+   }
+    
+   }
+   @media (max-width:790px) {
+.productname{
+
+  font-size:3vw ;
+}
+   
+     .productdescription{
+font-size: 1.7vw;
+
+
+     }
+     .productprice{
+
+      font-size: 1.7vw;
+     }
+     .redbutton{
+      font-size: 2vw;
+     }
+     .detail{
+
+    min-height: 60vw;
+     }
+     .detailpic{
+      height: 35vw;
+     }
+    }
+    @media (max-width:700px) {
+      
+.productdetail{
+flex-direction: column;
+gap: 2rem;
+
+}
+
+.detail{width: 70%;}
+.detailpic{
+  margin-top: 15rem;
+}
+
+    }
+    @media(max-width:600px){
+
+
+      .detailpic{
+        margin-top: 7rem;
+      }
+      .redbutton{
+        width: 13vw;
+      }
+    }
+
+    
+    
