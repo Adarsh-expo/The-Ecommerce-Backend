@@ -44,7 +44,7 @@ function Signup() {
     }
     try {
       const res = await axios.post(
-        'http://localhost:3000/api/v1/user/login',
+        'https://ecommerce-backend-teif.onrender.com/api/v1/user/login',
         logininfo,
         { headers: { 'Content-Type': 'multipart/form-data' }, withCredentials: true }
       );

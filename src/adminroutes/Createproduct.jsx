@@ -42,7 +42,7 @@ function Createproduct() {
        
         
         const res = await axios.post(
-          'http://localhost:3000/api/v1/product/createproduct',
+          'https://ecommerce-backend-teif.onrender.com/api/v1/product/createproduct',
           obi,
           {
             withCredentials: true,
@@ -72,7 +72,7 @@ function Createproduct() {
 
   useEffect(() => {
     const subcategCall = async () => {
-      const res = await axios.get('http://localhost:3000/api/v1/category/alltypesubcategory');
+      const res = await axios.get('https://ecommerce-backend-teif.onrender.com/api/v1/category/alltypesubcategory');
       setSubcateg(res.data.allsubcategdata);
     };
     subcategCall();

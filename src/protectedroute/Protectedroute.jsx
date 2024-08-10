@@ -14,7 +14,7 @@ const[isauth,setisauth]=useState(false)
 useEffect(()=>{
 const authenticate=async()=>{
   
-  const res=await axios.get('http://localhost:3000/api/v1/user/userverification',{withCredentials:true})
+  const res=await axios.get('https://ecommerce-backend-teif.onrender.com/api/v1/user/userverification',{withCredentials:true})
 console.log(res.data.status)
 setisauth(res.data.status)
 

@@ -8,7 +8,7 @@ function Adminroute() {
     const [isauthenticate,setisauthenticate]=useState(false);
     useEffect(()=>{
     const verifyrouteaccess=async()=>{
-        try{ const res=  await axios.get('http://localhost:3000/api/v1/user/admin-auth',  {withCredentials: true})
+        try{ const res=  await axios.get('https://ecommerce-backend-teif.onrender.com/api/v1/user/admin-auth',  {withCredentials: true})
     
     setisauthenticate(res.data.status);}
     catch(err){

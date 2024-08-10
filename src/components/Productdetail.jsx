@@ -24,7 +24,7 @@ useEffect(()=>{
 const callsingleproduct=async()=>{
 
 const res=await axios
-.get(`http://localhost:3000/api/v1/product/singleproduct/${productslug}`)
+.get(`https://ecommerce-backend-teif.onrender.com/api/v1/product/singleproduct/${productslug}`)
 
 getsingleproduct(res.data[0])
 console.log(res.data[0])
@@ -38,7 +38,7 @@ callsingleproduct()
 useEffect(()=>{
 const similarproduct=async()=>{
 console.log(singleproduct)
-if(singleproduct._id){const res=await axios.get(`http://localhost:3000/api/v1/product/similarproduct/${singleproduct._id}/${singleproduct.categoryid}`)
+if(singleproduct._id){const res=await axios.get(`https://ecommerce-backend-teif.onrender.com/api/v1/product/similarproduct/${singleproduct._id}/${singleproduct.categoryid}`)
 
 setsimilarproduct(res.data);
 console.log(res.data)}
@@ -80,7 +80,9 @@ toast.success('Added to cart')
       </div>
       
       
-          </div></div>
+          </div>
+          
+          </div>
     
 <div className='w-[100vw] text-center   font-semibold text-zinc-800 text-[2vw]'>You may also like</div>
 

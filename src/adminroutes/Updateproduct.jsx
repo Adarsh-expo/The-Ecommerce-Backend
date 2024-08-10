@@ -32,7 +32,7 @@ const navo=useNavigate()
 
 
 useEffect(()=>{ const slugcall=async()=>{  
-     const res= await axios.get(`http://localhost:3000/api/v1/product/singleproduct/${slug}`)
+     const res= await axios.get(`https://ecommerce-backend-teif.onrender.com/api/v1/product/singleproduct/${slug}`)
     setObi(res.data[0])
     setImage(res.data[0].photo)
     console.log(res.data[0])
@@ -60,7 +60,7 @@ useEffect(()=>{ const slugcall=async()=>{
         
         
         const res = await axios.post(
-          `http://localhost:3000/api/v1/product/updateproduct/${obi._id}`,
+          `https://ecommerce-backend-teif.onrender.com/api/v1/product/updateproduct/${obi._id}`,
           obi,
           {
             withCredentials: true,
@@ -81,7 +81,7 @@ useEffect(()=>{ const slugcall=async()=>{
 
   useEffect(() => {
     const subcategCall = async () => {
-      const res = await axios.get('http://localhost:3000/api/v1/category/alltypesubcategory');
+      const res = await axios.get('https://ecommerce-backend-teif.onrender.com/api/v1/category/alltypesubcategory');
       setSubcateg(res.data.allsubcategdata);
     };
     subcategCall();

@@ -26,7 +26,7 @@ useEffect(()=>{
 
     const allorder=async()=>{
         try{
-            const res=await axios.get('http://localhost:3000/api/v1/detail/getallorderdetail',{withCredentials:true})
+            const res=await axios.get('https://ecommerce-backend-teif.onrender.com/api/v1/detail/getallorderdetail',{withCredentials:true})
 setallorder(res.data.orders)
 console.log(res.data.orders)
 
@@ -47,7 +47,7 @@ allorder()
 const handlechange=async(value,orderid)=>{
 
 
-  try{const updatestatus=await axios.put(`http://localhost:3000/api/v1/detail/updateorder?order=${orderid}&status=${value}`,{},{
+  try{const updatestatus=await axios.put(`https://ecommerce-backend-teif.onrender.com/api/v1/detail/updateorder?order=${orderid}&status=${value}`,{},{
 
 withCredentials:true,
 

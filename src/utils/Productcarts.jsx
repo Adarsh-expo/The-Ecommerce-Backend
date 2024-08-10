@@ -36,7 +36,7 @@ useEffect(()=>{
 const getsubcateg=async()=>{
   if(slugobject)
   {
-    const subcateg= await axios.get(`http://localhost:3000/api/v1/category/allsubcategory/${slugobject.slug}`)
+    const subcateg= await axios.get(`https://ecommerce-backend-teif.onrender.com/api/v1/category/allsubcategory/${slugobject.slug}`)
 console.log(subcateg.data.categoriesall[0].Allslugbasedcategory)
 
 setsubcateg(subcateg.data.categoriesall[0].Allslugbasedcategory)

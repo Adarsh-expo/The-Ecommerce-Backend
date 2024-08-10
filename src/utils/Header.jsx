@@ -55,7 +55,7 @@ useEffect(()=>{des(moredetails())},[value])
   
    useEffect(()=>{
    const fetchprofile=async()=>{
-   const res=await axios.get('http://localhost:3000/api/v1/user/fetch-profile',{withCredentials:true})
+   const res=await axios.get('https://ecommerce-backend-teif.onrender.com/api/v1/user/fetch-profile',{withCredentials:true})
    console.log(res.data)
    
    des(insertdata(res.data.status&& res.data.userdata))
@@ -81,7 +81,7 @@ des(allcategcall())
 
 
 const logoutuser=async()=>{
-try{const res=await axios.post('http://localhost:3000/api/v1/user/logout',{}, {withCredentials: true})
+try{const res=await axios.post('https://ecommerce-backend-teif.onrender.com/api/v1/user/logout',{}, {withCredentials: true})
 console.log( res.data.status)
 
 des(insertdata({}))
