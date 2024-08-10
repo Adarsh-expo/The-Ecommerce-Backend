@@ -54,7 +54,7 @@ const [category,setcategory]=useState([])
  //we are using useeffect for getting all category on compinent mount
   useEffect(()=>{
 const getallcategory=async()=>{
-  const categdata=await axios.get(`http://localhost:3000/api/v1/category/allsubcategory/${slug}`,{withCredentials:true})
+  const categdata=await axios.get(`https://ecommerce-backend-teif.onrender.com/api/v1/category/allsubcategory/${slug}`,{withCredentials:true})
 console.log(categdata.data)
 
   setcategory(categdata.data.categoriesall[0].Allslugbasedcategory)
@@ -73,7 +73,7 @@ getallcategory()
 
 
 const deletecategory=async(ele)=>{
-  try{const res=await axios.delete(`http://localhost:3000/api/v1/category/deletesubcategory/${ele._id}`,{withCredentials:true})
+  try{const res=await axios.delete(`https://ecommerce-backend-teif.onrender.com/api/v1/category/deletesubcategory/${ele._id}`,{withCredentials:true})
 
 sethide1((pre)=>!pre)
 

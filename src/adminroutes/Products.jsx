@@ -21,7 +21,7 @@ function Products() {
 
 
 const subcateg=async(slug)=>{
-const res=await axios.get(`http://localhost:3000/api/v1/category/allsubcategory/${slug}`)
+const res=await axios.get(`https://ecommerce-backend-teif.onrender.com/api/v1/category/allsubcategory/${slug}`)
 setallsubcateg(res.data.categoriesall[0].Allslugbasedcategory);
 console.log(res.data.categoriesall[0].Allslugbasedcategory)
 
@@ -58,7 +58,7 @@ disp(allcategcall())
 
 
 const deleteproduct=async(id)=>{
-try{const res=await axios.get(`http://localhost:3000/api/v1/product/deleteproduct/${id}`,{withCredentials:true})
+try{const res=await axios.get(`https://ecommerce-backend-teif.onrender.com/api/v1/product/deleteproduct/${id}`,{withCredentials:true})
 
 toast.success(res.data.message,customToastOptions)
 setTimeout(()=>{disp(Productcall())},2000)
