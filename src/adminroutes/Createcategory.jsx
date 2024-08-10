@@ -64,7 +64,7 @@ const des=useDispatch();
 
 
 const deletecategory=async(ele)=>{
-  try{const res=await axios.delete(`https://ecommerce-backend-teif.onrender.com/api/v1/category/deletecategory/${ele._id}`,{withCredentials:true})
+  try{const res=await axios.delete(`http://localhost:3000/api/v1/category/deletecategory/${ele._id}`,{withCredentials:true})
 
 toast(res.data.message,customToastOptions)
 

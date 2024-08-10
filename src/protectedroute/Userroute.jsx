@@ -8,7 +8,7 @@ function Userroute() {
 const [isauthenticate,setisauthenticate]=useState(false);
 useEffect(()=>{
 const verifyrouteaccess=async()=>{
-    try{ const res=  await axios.get('https://ecommerce-backend-teif.onrender.com/api/v1/user/user-auth',  {withCredentials: true})
+    try{ const res=  await axios.get('http://localhost:3000/api/v1/user/user-auth',  {withCredentials: true})
 
 setisauthenticate(res.data.status);
 console.log(res.data.status)

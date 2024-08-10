@@ -46,9 +46,9 @@ e.preventDefault();
     try{ 
 
 
-     const res=  data[0].name?await axios.put(`https://ecommerce-backend-teif.onrender.com/api/v1/category/${params.slug?'updatesubcategory':'updatecategory'}/${data[0]._id}`,
+     const res=  data[0].name?await axios.put(`http://localhost:3000/api/v1/category/${params.slug?'updatesubcategory':'updatecategory'}/${data[0]._id}`,
      {name:obi},{withCredentials:true} ,{header:{'Content-Type': 'application/json'}})
-     :await axios.post(`https://ecommerce-backend-teif.onrender.com/api/v1/category/${params.slug ?`createsubcategory/${object._id}`:'createcategory'}`,
+     :await axios.post(`http://localhost:3000/api/v1/category/${params.slug ?`createsubcategory/${object._id}`:'createcategory'}`,
      {name:obi},{withCredentials:true} ,{header:{'Content-Type': 'application/json'}})
 
 

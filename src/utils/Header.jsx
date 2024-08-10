@@ -106,35 +106,33 @@ catch(err){console.log(err)}
     <div className='w-[100%] h-[11vh]  z-50 sticky top-0 bg-white 
     flex justify-between items-center px-[10px]'>
     {/* headerleft portion */}
-    <div  className='headerleft text-[1.6vw]   flex items-center'>
-      <img className='w-[4vw] h-[4vw] object-cover rounded-[50%]' 
-      src={user.avatar?user.avatar :profile}/>{user.username?user.username:'Guest'}</div>
+   
    
 
 {/* 
    Mid section */}
-    <div  className='input flex justify-center  w-[35vw] h-[3rem]
+    <div  className='input flex justify-center  md:w-[40vw] w-[50vw]    lg:w-[35vw] lg:h-[3rem] md:h-[3rem] h-[2.3rem]
       items-center border-[2px] border-zinc-300  rounded-lg'> 
     
-    <select onChange={(e)=>{setcategsearch(e.target.value);setringcolor(true)}} className='h-[100%]  rounded-lg text-[1.5vw] w-[33%] outline-none '>
+    <select onChange={(e)=>{setcategsearch(e.target.value);setringcolor(true)}} className='h-[100%]  rounded-lg lg:text-[1.5vw] text-[0.7rem]     w-[33%] outline-none '>
     <option  value='All Categories'  className='bg-white'>All Categories</option>
       {Categories.map((ele,index)=><option key={index}  value={ele.name} className='bg-white'>{ele.name}</option>)}</select>
-    <input onChange={(e)=>{setsearch(e.target.value)}}    value={search} placeholder='Search In' className=' outline-none  pl-2 text-[1.4rem]  w-[60%] 
+    <input onChange={(e)=>{setsearch(e.target.value)}}    value={search} placeholder='Search In' className=' outline-none  pl-2 lg:text-[1.4rem] md:text-[1.3rem]    text-[0.7rem]  w-[60%] 
       h-[100%] '  type='search'/>
     
 
 {search.trim()===""?
 
-   <Link    to={`/products/${categsearch}`} className='w-[10%] h-[100%]  hover:bg-slate-400 hover:scale-105'><i class={`ri-search-line  bg-zinc-200  w-[100%]    ${ringcolor && "ring-2 ring-offset-2 rounded ring-red-500"}  flex items-center  justify-center
-     h-[100%] text-[1.9vw]`}></i></Link> :
-      <Link      to={`/products/search/${search}`}    className='w-[10%] h-[100%]  hover:bg-slate-400 hover:scale-105'><i class="ri-search-line  bg-zinc-200   w-[100%] flex items-center  justify-center
-     h-[100%] text-[1.9vw]"></i></Link> }
+   <Link    to={`/products/${categsearch}`} className='lg:w-[10%] h-[100%] w-[16%]  hover:bg-slate-400 hover:scale-105'><i class={`ri-search-line  bg-zinc-200  w-[100%]    ${ringcolor && "ring-2 ring-offset-2 rounded ring-red-500"}  flex items-center  justify-center
+     h-[100%]   text-[4.4vw] lg:text-[1.9vw]`}></i></Link> :
+      <Link      to={`/products/search/${search}`}    className='lg:w-[10%]   w-[15%] h-[100%]  hover:bg-slate-400 hover:scale-105'><i class="ri-search-line  bg-zinc-200   w-[100%] flex items-center  justify-center
+     h-[100%]  text-[4.4vw]  lg:text-[1.9vw]"></i></Link> }
     
     </div>
     
     
     {/* //header right */}
-    <div className='headeright  flex gap-[15px] text-[2vw]'>
+    <div className='headeright  flex gap-[15px]  text:[3vw]    lg:text-[2vw]'>
     <Link to='/'><div   className='headerightcontent'>Home</div></Link>
 {!user.username&&<Link to='/signup'> <div  className='headerightcontent'>Sign Up</div></Link>}
 <ToastContainer/>
@@ -159,7 +157,11 @@ catch(err){console.log(err)}
        
       
        
-        <Link to='/user/cart'      className='relative '><i className="ri-shopping-bag-line    px-[8px] py-[8px]   rounded-full  text-center "></i><span className='text-white absolute h-[1.8vw]  text-center w-[1.8vw] bottom-[50%] left-[60%] rounded-full text-[1.4vw] bg-red-600'>{totalincart}</span></Link>
+        <Link to='/user/cart'      className='relative '>
+          <i className="ri-shopping-bag-line    px-[8px] py-[8px]   rounded-full  text-center "></i>
+          <span className='text-white absolute lg:h-[1.8vw] h-[2.3vw] w-[2.3vw]
+         text-center lg:w-[1.8vw]     bottom-[50%] left-[60%] rounded-full lg:text-[1.4vw] text-[2vw]  bg-red-600'>{totalincart}</span>
+         </Link>
         
         
     </div>

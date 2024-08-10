@@ -70,7 +70,7 @@ toast.success('Added to cart')
     
 <img className='h-[25vw] detailpic   object-cover min-w-[21vw]'
    src={singleproduct.photo}  />
-   <div className=' flex flex-col shadow-lg   detail px-3   rounded-lg pl-4  h-[30vw] w-[40vw]'>
+   <div className=' flex flex-col shadow-lg   detail px-3   rounded-lg pl-4  mb-[3rem]  min-h-[30vw] w-[40vw]'>
       <span className='text-[2vw] productname text-zinc-800 '>{singleproduct.name}</span> 
       <span className='text-[1.2vw] flex flex-col  productdescription   '><span className='font-semibold'>Description:</span>{singleproduct.description}</span>
 

@@ -3,7 +3,7 @@ import axios from "axios"
 const Productcall=()=>async(dispatch)=>{
 
 try{
-    const res=await axios.get('https://ecommerce-backend-teif.onrender.com/api/v1/product/allproduct')
+    const res=await axios.get('http://localhost:3000/api/v1/product/allproduct')
 
 dispatch(productInsert(res.data))
 }

@@ -177,56 +177,8 @@ height:30vw ;
    }
     
    }
-   @media (max-width:790px) {
-.productname{
-
-  font-size:3vw ;
-}
    
-     .productdescription{
-font-size: 1.7vw;
-
-
-     }
-     .productprice{
-
-      font-size: 1.7vw;
-     }
-     .redbutton{
-      font-size: 2vw;
-     }
-     .detail{
-
-    min-height: 60vw;
-     }
-     .detailpic{
-      height: 35vw;
-     }
-    }
-    @media (max-width:700px) {
-      
-.productdetail{
-flex-direction: column;
-gap: 2rem;
-
-}
-
-.detail{width: 70%;}
-.detailpic{
-  margin-top: 15rem;
-}
-
-    }
-    @media(max-width:600px){
-
-
-      .detailpic{
-        margin-top: 7rem;
-      }
-      .redbutton{
-        width: 13vw;
-      }
-    }
+  
 
     
     
