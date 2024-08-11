@@ -36,7 +36,7 @@ useEffect(()=>{
 const getsubcateg=async()=>{
   if(slugobject)
   {
-    const subcateg= await axios.get(`https://ecommerce-backend-teif.onrender.com/api/v1/category/allsubcategory/${slugobject.slug}`)
+    const subcateg= await axios.get(`http://localhost:3000/api/v1/category/allsubcategory/${slugobject.slug}`)
 console.log(subcateg.data.categoriesall[0].Allslugbasedcategory)
 
 setsubcateg(subcateg.data.categoriesall[0].Allslugbasedcategory)
@@ -93,12 +93,22 @@ setcategorychoosen(e.target.dataset.subcateg)
 const addtocart=async(ele)=>{
   const ele2={...ele,choosenquantity:1}
   des(Inserttocart(ele2))
-  toast.success("Added to cart",customToastOptions)
+  try{ const {data:{message}}=await
+  axios.post('http://localhost:3000/api/v1/Inserttocart',{id:ele2._id,choosenquantity:ele2.choosenquantity},{withCredentials:true})
+  console.log(message)
+  toast.success(message,customToastOptions)
+}
+catch(err){
+  console.log(err.message)
+}
+
+
+
 
   }
 
   return (   
-   <div className='overflow-y-hidden overflow-x-hidden'>
+   <div className='overflow-y-hidden overflow-x-hidden h-screen w-screen'>
   <Header />
      <div className='flex  overflow-y-hidden'>
        <div className='w-[20%] pt-3'>
