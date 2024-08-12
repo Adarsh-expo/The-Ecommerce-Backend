@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect,useState } from 'react'
 import { useSelector,useDispatch } from 'react-redux'
 import Productcall from '../Store/actions/productaction'
 import { Link } from 'react-router-dom'
@@ -6,6 +6,10 @@ import { Inserttocart } from '../Store/reducers/cartreducer'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { customToastOptions } from './Header';
+import addtocart from '../Store/actions/cartaction'
+import axios from 'axios'
+ import { useAddToCartBackend } from './Addtocartbackend'
+
 
 function Horizantlecart() {
 const product=useSelector((state)=>state.Products.value)
@@ -23,13 +27,34 @@ useEffect(()=>{
 },[])
 
 
-const addtocart=async(ele)=>{
-const ele2={...ele,choosenquantity:1}
-  dis(Inserttocart(ele2))
-  toast.success("Added to cart",customToastOptions)
-  }
 
 
+
+// const addtocartbackend=async(ele)=>{
+//   const ele2={...ele,choosenquantity:1}
+ 
+//   try{ const {data:{message}}=await
+//   axios.post('http://localhost:3000/api/v1/Inserttocart',{id:ele2._id,choosenquantity:ele2.choosenquantity},{withCredentials:true})
+//   console.log(message)
+ 
+//   toast.success(message,customToastOptions)
+//   setrunner((pre)=>!pre)
+  
+// }
+// catch(err){
+//   console.log(err.message)
+// }
+
+
+
+
+//   }
+
+const{addtocartbackend, runner}=useAddToCartBackend()
+useEffect(()=>{
+  dis(addtocart())
+  
+  console.log(product)},[runner])
   return (
 
  <div className='flex w-[100vw]   flex-wrap items-center justify-center mt-[2rem] gap-[3rem] '>
@@ -40,7 +65,7 @@ const ele2={...ele,choosenquantity:1}
              <span className=' text-[3vw] md:text-[2vw] lg:text-[1.5vw] mx-2 my-1 text-center text-zinc-700'>{ele.name.slice(0,30)}...</span>
               <span className=' text-[2.4vw]  md:text-[1.7vw]  lg:text-[1.1vw]'>${ele.price}</span>
               
-            </Link><button   onClick={()=>{addtocart(ele)}}        className='bg-yellow-400 mb-2 rounded-2xl lg:w-[8vw] w-[13vw]  text-[2.3vw]  md:text-[1.6vw]   lg:text-[1.2vw] py-1'>Add to cart</button></div>  
+            </Link><button   onClick={()=>{addtocartbackend(ele)}}        className='bg-yellow-400 mb-2 rounded-2xl lg:w-[8vw] w-[13vw]  text-[2.3vw]  md:text-[1.6vw]   lg:text-[1.2vw] py-1'>Add to cart</button></div>  
           ))}
 
     </div>
