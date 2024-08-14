@@ -6,7 +6,7 @@ import { useEffect,useState } from 'react';
 import Checkbox from '../utils/Checkbox';
 import Header from '../utils/Header';
 import { Link } from 'react-router-dom';
-import addtocart from '../Store/actions/Cartaction';
+import addtocart from '../Store/actions/cartaction';
 import axios from 'axios';
 import { usecustomdeletefromcart } from '../utils/customdeletefromcart';
 import { useSequentialdelete } from '../Custom hooks/Sequentialdelete';
