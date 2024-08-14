@@ -6,7 +6,7 @@ import { Inserttocart } from '../Store/reducers/cartreducer'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { customToastOptions } from './Header';
-import addtocart from '../Store/actions/Cartaction'
+import addtocart from '../Store/actions/cartaction'
 import axios from 'axios'
  import { useAddToCartBackend } from './Addtocartbackend'
 
