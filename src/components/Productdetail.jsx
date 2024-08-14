@@ -9,6 +9,8 @@ import Header from '../utils/Header'
 import Slickcomponent from '../utils/Slickcomponent'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import addtocart from '../Store/actions/cartaction'
+import { useAddToCartBackend } from '../utils/Addtocartbackend'
 
 
 function Productdetail() {
@@ -24,7 +26,7 @@ useEffect(()=>{
 const callsingleproduct=async()=>{
 
 const res=await axios
-.get(`https://ecommerce-backend-teif.onrender.com/api/v1/product/singleproduct/${productslug}`)
+.get(`http://localhost:3000/api/v1/product/singleproduct/${productslug}`)
 
 getsingleproduct(res.data[0])
 console.log(res.data[0])
@@ -38,7 +40,7 @@ callsingleproduct()
 useEffect(()=>{
 const similarproduct=async()=>{
 console.log(singleproduct)
-if(singleproduct._id){const res=await axios.get(`https://ecommerce-backend-teif.onrender.com/api/v1/product/similarproduct/${singleproduct._id}/${singleproduct.categoryid}`)
+if(singleproduct._id){const res=await axios.get(`http://localhost:3000/api/v1/product/similarproduct/${singleproduct._id}/${singleproduct.categoryid}`)
 
 setsimilarproduct(res.data);
 console.log(res.data)}
@@ -53,7 +55,9 @@ similarproduct();
 
 },[singleproduct])
 
+const{addtocartbackend, runner}=useAddToCartBackend
 
+useEffect(()=>{des(addtocart())},[runner])
 
 
   return (
@@ -71,8 +75,8 @@ similarproduct();
       <span className='text-[1.2vw] flex flex-col  productdescription   '><span className='font-semibold'>Description:</span>{singleproduct.description}</span>
 
       <span  className='text-[1.4rem] font-medium mb-3 mt-3  productprice text-red-400 '>${singleproduct.price}</span>
-      <div className='flex gap-[2rem]'><button className='bg-red-500 redbutton text-white    rounded h-[3rem] hover:scale-105 font-medium   w-[10vw]'>Buy now</button>
-      <button onClick={()=>{addtocart(singleproduct)}}      className='bg-orange-500 text-white redbutton  rounded w-[10vw] hover:scale-105 font-medium h-[3rem]'>Add to cart</button>
+      <div className='flex gap-[2rem]'>
+      <button onClick={()=>{addtocartbackend(ele)}}      className='bg-orange-500 text-white redbutton  rounded w-[10vw] hover:scale-105 font-medium h-[3rem]'>Add to cart</button>
       </div>
       
       
