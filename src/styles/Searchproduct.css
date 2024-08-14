@@ -1,0 +1,25 @@
+@media (max-width:1024px) {
+
+.searchdescription{
+
+    display: none;
+}
+
+    
+}
+@media (max-width:700px) {
+
+    /* .searchproduct{
+
+        min-height:45vw; 
+       
+       
+    } */
+    .yellowe{
+margin-top: 1rem;
+        margin-left:23% ;
+        
+    }
+    
+}
+ 
