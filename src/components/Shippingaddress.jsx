@@ -65,8 +65,8 @@ console.log(user)
 
         console.log(addressobject)
 
-        const {data}=  await axios.post('http://localhost:3000/api/v1/gateway/ordercheckout',{sumtotal})
-        const{data:{key}}=await axios.get('http://localhost:3000/api/v1/gateway/apikey')
+        const {data}=  await axios.post('https://ecommerce-backend-teif.onrender.com/api/v1/gateway/ordercheckout',{sumtotal})
+        const{data:{key}}=await axios.get('https://ecommerce-backend-teif.onrender.com/api/v1/gateway/apikey')
         
         var options = {
           key, 
