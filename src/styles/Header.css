@@ -66,3 +66,29 @@ justify-content:space-around;
 }
 
 }
+@media(max-width:370px){
+    .input{
+
+
+        margin-right: 1vw;
+        width: 80vw;
+    }
+.mainheader{
+
+    gap: 1rem;
+    
+}
+.selectcategory{
+
+    min-width:35% ;
+}
+.SearchIn{
+
+    width:40%;
+}
+.searchbox{
+
+    width: 35%;;
+}
+
+}
