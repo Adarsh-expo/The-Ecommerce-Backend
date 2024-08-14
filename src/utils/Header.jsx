@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 import allcategcall from '../Store/actions/categoriecallaction';
 import { moredetails } from '../Store/reducers/cartreducer';
 import '../styles/Header.css'
-import addtocart from '../Store/actions/Cartaction';
+import addtocart from '../Store/actions/cartaction';
 
 
  export const customToastOptions = {
