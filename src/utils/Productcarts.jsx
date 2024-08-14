@@ -8,7 +8,8 @@ import allcategcall from '../Store/actions/categoriecallaction';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import { Inserttocart } from '../Store/reducers/cartreducer';
-import addtocart from '../Store/actions/cartaction';
+import addtocart from '../Store/actions/Cartaction';
+
 import { useAddToCartBackend } from './Addtocartbackend';
 import axios from 'axios';
 import '../styles/Productcart.css'
@@ -35,7 +36,7 @@ useEffect(()=>{
 const getsubcateg=async()=>{
   if(slugobject)
   {
-    const subcateg= await axios.get(`http://localhost:3000/api/v1/category/allsubcategory/${slugobject.slug}`)
+    const subcateg= await axios.get(`https://ecommerce-backend-teif.onrender.com/api/v1/category/allsubcategory/${slugobject.slug}`)
 console.log(subcateg.data.categoriesall[0].Allslugbasedcategory)
 
 setsubcateg(subcateg.data.categoriesall[0].Allslugbasedcategory)

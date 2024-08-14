@@ -25,6 +25,7 @@ import Productdetail from './components/Productdetail'
 import Ordersuccessfull from './components/Ordersuccessfull'
 import Shippingaddress from './components/Shippingaddress'
 import Adminorder from './adminroutes/Adminorder'
+import Loginsuggest from './components/Loginsuggest'
 
 
 
@@ -38,6 +39,7 @@ function App() {
   <Router>
 
 <Routes>
+  {/* general route */}
 <Route path='/' element={<Home/>}/>
   <Route path='/signin' element={<Signin/>} />
   <Route path='/signup' element={<Signup/>} />
@@ -49,6 +51,7 @@ function App() {
   <Route path='/products/:subcategory/:productslug' element={<Productdetail/>} />
   <Route path='/Bestseller/headphone/:productslug' element={<Productdetail/>} />
   <Route path='/Paymentsuccessfull' element={<Ordersuccessfull/>} />
+  <Route path='viewcart' element={<Loginsuggest/>} />
 
 
 

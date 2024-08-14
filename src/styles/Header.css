@@ -1,0 +1,68 @@
+/* responsiveness header */
+@media (max-width:560px) {
+    
+.headeright{
+
+    position:absolute;
+top: 74%;
+left: 25%;
+right: 25%;
+
+display: flex;
+width: 100vw;
+left: 0;
+justify-content:space-around;
+
+
+
+
+    
+}
+.input{
+
+
+    margin-right: 3vw;
+    width: 65vw;
+    margin-top: -1rem;
+    
+}
+.mainheader{
+
+    height: 9rem;
+    position: relative;
+ 
+   align-items: flex-start;
+   
+}
+.logo{
+    margin-top: -1rem;
+}
+
+
+}
+@media(max-width:400px){
+    .input{
+
+
+        margin-right: 3vw;
+        width: 75vw;
+    }
+.mainheader{
+
+    gap: 1rem;
+    
+}
+.selectcategory{
+
+    min-width:32% ;
+}
+.SearchIn{
+
+    width:50%;
+}
+.searchbox{
+
+    width: 18%;;
+}
+
+}

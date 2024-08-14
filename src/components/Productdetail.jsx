@@ -53,11 +53,7 @@ similarproduct();
 
 },[singleproduct])
 
-const addtocart=async(ele)=>{
-  const ele2={...ele,choosenquantity:1}
-des(Inserttocart(ele2))
-toast.success('Added to cart')
-}
+
 
 
   return (
@@ -88,7 +84,7 @@ toast.success('Added to cart')
 
 
 
-<Slickcomponent similarproduct={similarproduct} subcategory={subcategory} addtocart={addtocart}  />
+<Slickcomponent similarproduct={similarproduct} subcategory={subcategory}   />
 
 
 

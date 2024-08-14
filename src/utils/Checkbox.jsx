@@ -8,17 +8,18 @@ function Checkbox({id,checkedstatevalue,setcheckedstatevalue}) {
 const cartdata=useSelector((state)=>state.Cart.value)
 
 
-    const[checked,setchecked]=useState(true)
+    const[checked,setchecked]=useState(false)
 
     const checkvaluestore=async(e)=>{
       
         if(checked){
-           
+           console.log(checkedstatevalue)
+
         const filterchecked=await checkedstatevalue.filter((ele)=>ele._id!==e.target.value)
-   
+   console.log(filterchecked)
         setcheckedstatevalue(filterchecked)
         setchecked(false)}
-        else{
+        if(!checked){
         const obi=cartdata.find((ele)=>ele._id===e.target.value)
         console.log(obi)
           setcheckedstatevalue((pre)=>[...pre,obi])

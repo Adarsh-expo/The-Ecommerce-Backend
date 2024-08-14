@@ -23,7 +23,7 @@ function Admindashboard() {
   
   
   return (
-    <> <Header/> <div className='flex '>
+    <div className='h-screen w-screen overflow-x-hidden '> <Header/> <div className='flex '>
     
     <Adminmenu/>
  <div className='w-[80vw] flex flex-col items-center gap-[3rem] pt-[3rem]'>
@@ -31,7 +31,7 @@ function Admindashboard() {
   <Reactable columns={column} data={data}/>
   </div>
 
-</div> </>
+</div> </div>
   
   )
   

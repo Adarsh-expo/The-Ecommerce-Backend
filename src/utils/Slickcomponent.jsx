@@ -5,10 +5,14 @@ import Slider from "react-slick";
 import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useAddToCartBackend } from './Addtocartbackend';
+import { useEffect } from 'react';
+import { useDispatch,useSelector } from 'react-redux';
+import addtocart from '../Store/actions/Cartaction';
 
-function Slickcomponent({similarproduct,subcategory,addtocart}) {
+function Slickcomponent({similarproduct,subcategory}) {
 
-
+const des=useDispatch()
 
     var settings = {
         dots: true,
@@ -22,8 +26,12 @@ function Slickcomponent({similarproduct,subcategory,addtocart}) {
         cssEase: "linear"
       };
 
-   
+   const{addtocartbackend,runner}=useAddToCartBackend();
 
+useEffect(()=>{
+  des(addtocart())
+  console.log("jjj")
+  },[runner])
 
   return (
     <div className=' mb-[3rem]  w-3/4 m-auto'>
@@ -36,7 +44,7 @@ function Slickcomponent({similarproduct,subcategory,addtocart}) {
          <Link  to={`/products/${subcategory}/${ele.slug}`}    className='text-[2vw] hover:text-red-500  lg:text-[1.3vw] text-center '>{ele.name.slice(0,30)}..</Link>
     <span className='text-[0.6rem] lg:text-[1.4vw] md:text-[2vw]   '>${ele.price}</span>
    
-    <button onClick={()=>{addtocart(ele)}} className='bg-yellow-500 mb-2 px-2 min-h-[1.4rem]    min-w-[3rem] text-[2vw] lg:text-[1.3vw]   text-white rounded-xl '   >Add to cart </button>
+    <button onClick={()=>{addtocartbackend(ele)}} className='bg-yellow-500 mb-2 px-2 min-h-[1.4rem]    min-w-[3rem] text-[2vw] lg:text-[1.3vw]   text-white rounded-xl '   >Add to cart </button>
     
     </div>
    

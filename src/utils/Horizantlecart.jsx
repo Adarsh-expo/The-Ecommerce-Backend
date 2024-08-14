@@ -6,7 +6,7 @@ import { Inserttocart } from '../Store/reducers/cartreducer'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { customToastOptions } from './Header';
-import addtocart from '../Store/actions/cartaction'
+import addtocart from '../Store/actions/Cartaction'
 import axios from 'axios'
  import { useAddToCartBackend } from './Addtocartbackend'
 
@@ -34,7 +34,7 @@ useEffect(()=>{
 //   const ele2={...ele,choosenquantity:1}
  
 //   try{ const {data:{message}}=await
-//   axios.post('http://localhost:3000/api/v1/Inserttocart',{id:ele2._id,choosenquantity:ele2.choosenquantity},{withCredentials:true})
+//   axios.post('https://ecommerce-backend-teif.onrender.com/api/v1/Inserttocart',{id:ele2._id,choosenquantity:ele2.choosenquantity},{withCredentials:true})
 //   console.log(message)
  
 //   toast.success(message,customToastOptions)
@@ -50,10 +50,10 @@ useEffect(()=>{
 
 //   }
 
-const{addtocartbackend, runner}=useAddToCartBackend()
+const{addtocartbackend, runner}=useAddToCartBackend() //created custom hook
 useEffect(()=>{
   dis(addtocart())
-  
+  console.log("uu")
   console.log(product)},[runner])
   return (
 
@@ -65,9 +65,11 @@ useEffect(()=>{
              <span className=' text-[3vw] md:text-[2vw] lg:text-[1.5vw] mx-2 my-1 text-center text-zinc-700'>{ele.name.slice(0,30)}...</span>
               <span className=' text-[2.4vw]  md:text-[1.7vw]  lg:text-[1.1vw]'>${ele.price}</span>
               
-            </Link><button   onClick={()=>{addtocartbackend(ele)}}        className='bg-yellow-400 mb-2 rounded-2xl lg:w-[8vw] w-[13vw]  text-[2.3vw]  md:text-[1.6vw]   lg:text-[1.2vw] py-1'>Add to cart</button></div>  
+            </Link><button   onClick={()=>{   addtocartbackend(ele)}}        className='bg-yellow-400 mb-2       rounded-2xl lg:w-[8vw] w-[13vw]  text-[2.3vw]  md:text-[1.6vw]   lg:text-[1.2vw] py-1'>Add to cart </button></div>  
           ))}
 
+
+{/* <div className='absolute w-screen top-0 right-0 h-screen  opacity-20 bg-zinc-700 '></div> */}
     </div>
   
   )

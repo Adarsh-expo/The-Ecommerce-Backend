@@ -25,9 +25,10 @@ state.subtotal=subtotal;
 state.sumtotal=sumtotal;
 }
 //to count total product in cart
-const cartintotal=state.value.reduce((acc,curval)=>acc+curval.choosenquantity,0)
+console.log(state.value)
+const cartintotal=state.value?.reduce((acc,curval)=>acc+curval.choosenquantity,0)
 state.totalincart=cartintotal
-
+console.log(cartintotal)
 
 //to initialse with the selected product value so i could use it in other component specially during checkout
 state.selectedproduct=action.payload;
@@ -46,45 +47,16 @@ state.selectedproduct=action.payload;
 
 ,
         Inserttocart:(state,action)=>{
-
-            const index=state.value.findIndex((ele)=>ele._id===action.payload._id)
-            console.log(index)
-            if(index<0){
-                
-
-                state.value.push(action.payload)
-
-            }
-            else{
-                if(state.value[index].choosenquantity<state.value[index].quantity)
-                state.value[index].choosenquantity+=1;
-            }
+console.log(action.payload)
+            state.value=action.payload
 
 
 
         },
 
-sequentialdelete:(state,action)=>{
-console.log(action.payload)
-    
-    if(action.payload.choosenquantity>0)
-    {
-        const findindex=state.value.findIndex((ele)=>ele._id===action.payload._id)
-
-        state.value[findindex].choosenquantity-=1;
-    
-    }
 
 
-    
-}
-,
-
-        Deletefromcart:(state,action)=>{
-
-            state.value=state.value.filter((ele)=>ele._id!==action.payload._id)
-         
-        }
+       
 
 
         

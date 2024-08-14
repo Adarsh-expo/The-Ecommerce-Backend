@@ -8,16 +8,23 @@ export const useAddToCartBackend = () => {
     const [runner, setRunner] = useState(true);
 
     const addtocartbackend = async (ele) => {
-        const ele2 = { ...ele, choosenquantity: 1 };
+        let ele2={};
+        if(ele.quantity===0){
+             ele2 = { ...ele, choosenquantity: 0 }
+        }
+        else{  ele2 = { ...ele, choosenquantity: 1 };}
+       
         try {
-            const { data: { message } } = await axios.post(
-                'http://localhost:3000/api/v1/Inserttocart',
+            const { data: { success,message } } = await axios.post(
+                'https://ecommerce-backend-teif.onrender.com/api/v1/Inserttocart',
                 { id: ele2._id, choosenquantity: ele2.choosenquantity },
                 { withCredentials: true }
             );
-            console.log(message);
+            console.log(message,success);
 
-            toast.success(message, customToastOptions);
+
+            success?  toast.success(message, customToastOptions):toast.warn("Login first")
+          
             setRunner(prev => !prev);
         } catch (err) {
             console.log(err.message);

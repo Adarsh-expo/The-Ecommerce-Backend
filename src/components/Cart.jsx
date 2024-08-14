@@ -1,13 +1,16 @@
 import React from 'react'
 import { useSelector,useDispatch } from 'react-redux'
-import { Deletefromcart,sequentialdelete,Inserttocart,moredetails } from '../Store/reducers/cartreducer'
+import { moredetails } from '../Store/reducers/cartreducer'
 
 import { useEffect,useState } from 'react';
 import Checkbox from '../utils/Checkbox';
 import Header from '../utils/Header';
 import { Link } from 'react-router-dom';
-
+import addtocart from '../Store/actions/Cartaction';
 import axios from 'axios';
+import { usecustomdeletefromcart } from '../utils/customdeletefromcart';
+import { useSequentialdelete } from '../Custom hooks/Sequentialdelete';
+import { useSequentialincrease } from '../Custom hooks/Sequentialincrease';
 
 
 
@@ -18,29 +21,29 @@ function Cart() {
   const cartdata=useSelector((state)=>state.Cart.value)
   const user=useSelector((state)=>state.User.value)
   
-  console.log(user)
-  const remove=(ele)=>{
-des(Deletefromcart(ele))
-console.log(ele)
-  }
+
+
+
+
  
-  const insertdata=(ele)=>{
+ 
 
-    des(Inserttocart(ele))
-  }
 
-const[checkedstatevalue,setcheckedstatevalue]=useState(cartdata)
+const[checkedstatevalue,setcheckedstatevalue]=useState([])
+
+
+
   const {sumtotal,subtotal,totalincart}=useSelector((state)=>state.Cart)
+
+
 useEffect(()=>{
-
-  const filteredItems = cartdata.filter(item => 
-    checkedstatevalue.some(checkedItem => checkedItem._id === item._id)
-  )
-des(moredetails(filteredItems));
+  
+  const filter=cartdata.filter((ele)=>(checkedstatevalue.some((ele2)=>ele2._id===ele._id)))
+des(moredetails(filter));
 
 
 
-},[cartdata,checkedstatevalue])
+},[checkedstatevalue,cartdata])
 
 
 
@@ -50,6 +53,12 @@ des(moredetails(filteredItems));
 
  useEffect(()=>{console.log(checkedstatevalue)},[checkedstatevalue])
 
+//here addto cart redux from backend cart eveytime when when we delete the cart value
+const{runner2,deletefromcart}=usecustomdeletefromcart()
+const{runner3,sequentialdelete}=useSequentialdelete()
+const{runner4,sequentialincrease}=useSequentialincrease()
+
+useEffect(()=>{des(addtocart())},[runner2,runner3,runner4])
 
 
 
@@ -63,7 +72,7 @@ des(moredetails(filteredItems));
     
       <div className=' growcontainer   rounded-2xl ml-[1rem]  md:ml-[3rem]   lg:ml-[4rem] mt-[2rem] w-[70%] min-h-[30vw] px-[1rem]   shadow-xl'>
       <div className='text-[2.2vw] mb-2'> Shopping Cart:{totalincart}</div>
-      {cartdata.map((ele)=><div className='flex mt-2  
+      {cartdata.map((ele,index)=><div  key={index} className='flex mt-2  
        min-h-[18vw]  w-[100%] items-center justify-between'>
          <div className='flex  items-center  mt-[2rem] lg:gap-[2rem] md:gap-[1.7rem] gap-2 '>
           
@@ -74,17 +83,17 @@ des(moredetails(filteredItems));
             {ele.name.slice(0,60)}<span className='font-thin'>${ele.price}</span>
           <h1 className={` ${ele.quantity>0?"text-[#1296AB]":"text-red-500"}  text-[2vw]    lg:text-[1vw]`}>{ele.quantity>0?"In Stock":"Out of stock"}</h1>
           
-          <button onClick={()=>{remove(ele)}} className=' mt-[1rem] flex '>
+          <button onClick={()=>{deletefromcart(ele._id)}} className=' mt-[1rem] flex '>
             <i class="ri-delete-bin-6-line  hover:scale-110 text-red-500"></i>
             <span className='text-[#1296AB]'>Remove</span>
             </button>
           </div>
           </div>
              <div className=' items-center  flex lg:gap-[1rem] gap-1'>
-              <button  onClick={()=>{des(sequentialdelete(ele))}} className='bg-orange-500 rounded h-[4vw]  md:h-[2.3vw]  lg:h-[2.3vw] 
+              <button  onClick={()=>{sequentialdelete(ele._id)}} className='bg-orange-500 rounded h-[4vw]  md:h-[2.3vw]  lg:h-[2.3vw] 
              flex justify-center items-center     w-[4vw]   md:w-[2.3vw] lg:w-[2.3vw] shadow-2xl text-white  text-[5.3vw] md:text-[2vw]  lg:text-[1.6vw] '>-</button>
              <span className='lg:text-[1vw]  md:text-[1vw] text-[2.6vw] font-normal text-zinc-700'>{ele.choosenquantity}</span>
-             <button  onClick={()=>{insertdata(ele)}}   className='bg-blue-600 rounded  text-[5.3vw] md:text-[2vw]  lg:text-[1.6vw] flex justify-center items-center  h-[4vw]  md:h-[2.3vw]  lg:h-[2.3vw]  text-center  text-white    w-[4vw]   md:w-[2.3vw] lg:w-[2.3vw]'>+</button>
+             <button  onClick={()=>{sequentialincrease(ele)}}   className='bg-blue-600 rounded  text-[5.3vw] md:text-[2vw]  lg:text-[1.6vw] flex justify-center items-center  h-[4vw]  md:h-[2.3vw]  lg:h-[2.3vw]  text-center  text-white    w-[4vw]   md:w-[2.3vw] lg:w-[2.3vw]'>+</button>
              </div>
             <hr/>
              </div> )}
@@ -100,8 +109,8 @@ des(moredetails(filteredItems));
        <div className=' flex w-[100%] px-[1rem] items-center flex-col '>
        <div className='flex   items-center mt-[10%] text-zinc-500    md:text-[1.7vw] text-[2.7vw]  lg:text-[1.4vw] w-[100%] justify-between'><div className=''>Total Qunatity</div><span>{subtotal}</span></div> 
         
-        <div className='flex mt-[5%]  items-center w-[100%] font-medium justify-between md:text-[1.7vw]   text-[2.7vw]        lg:text-[1.4vw]'><span>Total Amount</span><span>{sumtotal}</span></div>
-<button     disabled={!sumtotal}    className={` ${!sumtotal?"bg-orange-200":"bg-orange-400"}  mt-[10%] text-teal-50  w-[90%]   lg:text-[1.3vw] md:text-[1.4vw] text-[2.2vw]  md:h-[2.2rem] lg:h-[2rem]`}>
+        <div className='flex mt-[5%] gap-3 items-center w-[100%] font-medium justify-between md:text-[1.7vw]   text-[2.7vw]        lg:text-[1.4vw]'><span>Total Amount</span><span>{sumtotal}</span></div>
+<button     disabled={!sumtotal }    className={` ${!sumtotal?"bg-orange-200":"bg-orange-400"}  mt-[10%] text-teal-50  w-[90%]   lg:text-[1.3vw] md:text-[1.4vw] text-[2.2vw]  md:h-[2.2rem] lg:h-[2rem]`}>
  {sumtotal?<Link to='/user/cart/addshippingaddress'   >GO TO CHECKOUT</Link>:"Go To Checkout"} </button>
 
         </div>
