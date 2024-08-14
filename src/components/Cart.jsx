@@ -68,11 +68,11 @@ useEffect(()=>{des(addtocart())},[runner2,runner3,runner4])
 
   return (<div className='overflow-x-hidden overflow-y-hidden'>
   <Header/>
-  <div className=' mt-3 flex'>   
+  <div className=' mt-3 overflow-y-auto    flex'>   
 
     
-      <div className=' growcontainer   rounded-2xl ml-[1rem]  md:ml-[3rem]   lg:ml-[4rem] mt-[2rem] w-[70%] min-h-[30vw] px-[1rem]   shadow-xl'>
-      <div className='text-[2.2vw] mb-2'> Shopping Cart:{totalincart}</div>
+      <div className=' growcontainer   rounded-2xl ml-[1rem]  md:ml-[3rem]    lg:ml-[4rem] mt-[2rem] w-[70%] min-h-[30vw] px-[1rem]    shadow-xl'>
+      <div className='lg:text-[2.2vw] md:text-[2.5vw] text-[3vw]  mb-2'> Shopping Cart:{totalincart}</div>
       {cartdata.map((ele,index)=><div  key={index} className='flex mt-2  
        min-h-[18vw]  w-[100%] items-center justify-between'>
          <div className='flex  items-center  mt-[2rem] lg:gap-[2rem] md:gap-[1.7rem] gap-2 '>
@@ -104,14 +104,14 @@ useEffect(()=>{des(addtocart())},[runner2,runner3,runner4])
     
     
     
-    <div  className='w-[25%] overflow-y-auto lg:ml-[2rem] md:ml-[2rem] ml-[1rem] flex flex-col items-center shadow-2xl rounded-xl min-h-[20vw]'  >
+    <div  className='lg:w-[25%] md:w-[25%] w-[30%]  overflow-y-auto lg:ml-[2rem] md:ml-[2rem] ml-[1rem] flex flex-col items-center shadow-2xl rounded-xl h-fit'  >
       <div className='mb-[1vw] mt-[1vw] text-zinc-400'>Summary</div>
       <hr className='h-[8px] w-[95%]'/>  
        <div className=' flex w-[100%] px-[1rem] items-center flex-col '>
        <div className='flex   items-center mt-[10%] text-zinc-500    md:text-[1.7vw] text-[2.7vw]  lg:text-[1.4vw] w-[100%] justify-between'><div className=''>Total Qunatity</div><span>{subtotal}</span></div> 
         
         <div className='flex mt-[5%] gap-3 items-center w-[100%] font-medium justify-between md:text-[1.7vw]   text-[2.7vw]        lg:text-[1.4vw]'><span>Total Amount</span><span>{sumtotal}</span></div>
-<button     disabled={!sumtotal }    className={` ${!sumtotal?"bg-orange-200":"bg-orange-400"}  mt-[10%] text-teal-50  w-[90%]   lg:text-[1.3vw] md:text-[1.4vw] text-[2.2vw]  md:h-[2.2rem] lg:h-[2rem]`}>
+<button     disabled={!sumtotal }    className={` ${!sumtotal?"bg-orange-200":"bg-orange-400"}  mt-[10%] text-teal-50  mb-2 rounded w-[90%]   lg:text-[1.3vw] md:text-[1.4vw] text-[2.2vw]  md:h-[2.2rem] lg:h-[2rem]`}>
  {sumtotal?<Link to='/user/cart/addshippingaddress'   >GO TO CHECKOUT</Link>:"Go To Checkout"} </button>
 
         </div>
