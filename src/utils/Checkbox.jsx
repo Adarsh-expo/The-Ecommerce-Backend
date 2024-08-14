@@ -30,7 +30,7 @@ const cartdata=useSelector((state)=>state.Cart.value)
 
 
   return (
-   <input onChange={checkvaluestore} className='w-[1.4vw]' value={id}  checked={checked} type='checkbox'/>
+   <input onChange={checkvaluestore} className='lg:w-[1.4vw]  h-[4vw] md:h-[4vw] lg:h-[2vw] text-red-700' value={id}  checked={checked} type='checkbox'/>
   )
 }
 
