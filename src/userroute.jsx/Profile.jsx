@@ -1,6 +1,7 @@
 import React from 'react'
 import Usermenu from '../utils/Usermenu'
 import Header from '../utils/Header'
+import { useState,useEffect } from 'react'
 function Profile() {
     document.title="Your Profile"
 
