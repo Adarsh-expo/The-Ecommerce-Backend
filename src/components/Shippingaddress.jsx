@@ -80,7 +80,7 @@ console.log(user)
 
 handler:function(res){
 
-axios.post('http://localhost:3000/api/v1/gateway/paymentverfication',{addressobject,res,amount:data.data.amount*1/100,selectedproduct,id:user._id})
+axios.post('https://ecommerce-backend-teif.onrender.com/api/v1/gateway/paymentverfication',{addressobject,res,amount:data.data.amount*1/100,selectedproduct,id:user._id})
 .then((res)=>{console.log(res.data.message)
 if(res.data.orderid){window.location.href=`/Paymentsuccessfull/?reference_id=${res.data.orderid}`}
 
