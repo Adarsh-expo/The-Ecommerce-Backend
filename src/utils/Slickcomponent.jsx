@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useAddToCartBackend } from './Addtocartbackend';
 import { useEffect } from 'react';
 import { useDispatch,useSelector } from 'react-redux';
-import addtocart from '../Store/actions/Cartaction';
+import addtocart from '../Store/actions/cartaction';
 
 function Slickcomponent({similarproduct,subcategory}) {
 
