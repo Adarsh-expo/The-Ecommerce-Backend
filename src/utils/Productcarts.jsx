@@ -4,11 +4,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import Productcall from '../Store/actions/productaction';
 import Header from './Header';
 import { productInsert } from '../Store/reducers/productreducer';
+
 import allcategcall from '../Store/actions/categoriecallaction';
+
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import { Inserttocart } from '../Store/reducers/cartreducer';
-import addtocart from '../Store/actions/Cartaction';
+
+import addtocart from '../Store/actions/cartaction';
 
 import { useAddToCartBackend } from './Addtocartbackend';
 import axios from 'axios';
