@@ -25,7 +25,8 @@ function Profile() {
     
     <Header/>
     
-     <div className='flex '>
+     <div className='flex relative '>
+     <button onClick={()=>{setsize(501)}} className='absolute top-1 left-1 hover:scale-105'> <i className={`ri-menu-line  text-[1.4rem] text-red-600 ${size>500 && "hidden"} `}></i></button>
     
     <Usermenu  size={size} setsize={setsize}/>
   <div>profile</div>
