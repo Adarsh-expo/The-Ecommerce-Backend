@@ -55,7 +55,7 @@ window.addEventListener('resize',()=>{
 
 
   </div>
-  <Footer/>
+ 
 
 </div>
 
