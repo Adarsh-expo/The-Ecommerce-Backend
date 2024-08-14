@@ -55,7 +55,7 @@ similarproduct();
 
 },[singleproduct])
 
-const{addtocartbackend, runner}=useAddToCartBackend
+const{addtocartbackend, runner}=useAddToCartBackend()
 
 useEffect(()=>{des(addtocart())},[runner])
 
@@ -76,7 +76,7 @@ useEffect(()=>{des(addtocart())},[runner])
 
       <span  className='text-[1.4rem] font-medium mb-3 mt-3  productprice text-red-400 '>${singleproduct.price}</span>
       <div className='flex gap-[2rem]'>
-      <button onClick={()=>{addtocartbackend(ele)}}      className='bg-orange-500 text-white redbutton  rounded w-[10vw] hover:scale-105 font-medium h-[3rem]'>Add to cart</button>
+      <button onClick={()=>{addtocartbackend(singleproduct)}}      className='bg-orange-500 text-white redbutton  rounded w-[10vw] hover:scale-105 font-medium h-[3rem]'>Add to cart</button>
       </div>
       
       
