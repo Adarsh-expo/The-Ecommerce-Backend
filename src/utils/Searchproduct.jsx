@@ -10,6 +10,7 @@ import { Inserttocart } from '../Store/reducers/cartreducer';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { customToastOptions } from './Header';
+import  '../styles/Searchproduct.css'
 function Searchproduct() {
 const[pricerange,setpricerange]=useState([100,13000])
 
@@ -85,19 +86,22 @@ window.addEventListener('resize',()=>{
          </div>
        </div>
 
-<div className='flex flex-col w-[70%] h-[88vh] overflow-y-auto  productright'>
+<div className='flex flex-col w-[70%] h-[88vh] overflow-y-auto   productright'>
 {keyproduct.map((ele, index) => (
-    <div className='rounded-lg flex flex-col items-center  shadow-lg mt-[1rem]  min-h-[25vw]'  key={index} >
-      <Link       to={`/products/search/${keyword}/${ele.slug}`}          className='flex  items-center gap-[3rem]  w-[60vw]' key={index}>
+    <div className='rounded-lg flex flex-col items-center searchproduct  text-balance shadow-lg mt-[1rem]  h-fit '  key={index} >
+      <Link       to={`/products/search/${keyword}/${ele.slug}`}      
+          className='flex  items-center gap-[3rem]  w-[60vw]' key={index}>
 
-<img  className='h-[20vw] w-[35%] object-contain' src={ele.photo}/>
-<div className='flex   pt-4 flex-col'> <span className='text-[2vw] text-zinc-700 font-light'>{ele.name.slice(0,60)}...</span> <span  className='text-[1.6vw] font-thin'>{ele.description.slice(0,150)}</span>
-<span className='text-[1vw]'>${ele.price}</span> 
+<img  className='h-[20vw] w-[40%]   lg:w-[35%] md:w-[35%]  object-contain' src={ele.photo}/>
+<div className='flex   pt-4 flex-col'> <span className='lg:text-[2vw]  md:text-[2.5vw] text-[3vw]     text-zinc-700 font-light'>{ele.name.slice(0,60)}...</span> 
+<span  className='text-[1.6vw] searchdescription font-thin'>{ele.description.slice(0,150)}</span>
+<span className='lg:text-[1.3vw] md:text-[2vw] text-[2.6vw]  '>${ele.price}</span> 
 
 
 </div>
 
-          </Link><button  onClick={()=>{addtocart(ele)}}   className='bg-yellow-400 mb-2 rounded-2xl w-[8vw] text-[1.2vw] py-1'>Add to cart</button>
+          </Link>
+          <button  onClick={()=>{addtocart(ele)}}   className='bg-yellow-400 mb-2  yellowe  rounded-2xl w-fit lg:w-[7rem] px-2 text-[2.3vw]     md:text-[1.5vw] lg:text-[1.2vw] py-1'>Add to cart</button>
 </div>      
           ))}</div>
     </div></div>
