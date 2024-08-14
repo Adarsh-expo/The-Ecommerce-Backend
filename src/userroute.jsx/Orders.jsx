@@ -13,7 +13,7 @@ function Orders() {
 useEffect(()=>{
 const getdetail=async()=>{
 
-  const res= await axios.get('http://localhost:3000/api/v1/detail/getorderdetail',{withCredentials:true})
+  const res= await axios.get('https://ecommerce-backend-teif.onrender.com/api/v1/detail/getorderdetail',{withCredentials:true})
 console.log(res.data)
 setorder(res.data.Order)
 }
