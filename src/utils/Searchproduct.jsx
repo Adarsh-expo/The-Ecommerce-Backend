@@ -22,9 +22,12 @@ console.log(keyword)
 const products=useSelector((state)=>state.Products.value)
 console.log(products)
 
-const newproducts=products.filter((ele) => 
-ele.name.toLowerCase().includes(keyword.toLowerCase()  )
+let newproducts=products.filter((ele) => 
+ ele.productcategory.toLowerCase().includes(keyword.toLowerCase()) ||
+ele.productsubcategory.toLowerCase().includes(keyword.toLowerCase()) || ele.name.toLowerCase().includes(keyword.toLowerCase())
 );
+console.log(newproducts)
+
 
 
 console.log(newproducts)
@@ -87,7 +90,9 @@ window.addEventListener('resize',()=>{
        </div>
 
 <div className='flex flex-col w-[70%] h-[88vh] overflow-y-auto   productright'>
-{keyproduct.map((ele, index) => (
+
+
+{keyproduct.length  ?keyproduct.map((ele, index) => (
     <div className='rounded-lg flex flex-col items-center searchproduct  text-balance shadow-lg mt-[1rem]  h-fit '  key={index} >
       <Link       to={`/products/search/${keyword}/${ele.slug}`}      
           className='flex  items-center gap-[3rem]  w-[60vw]' key={index}>
@@ -101,9 +106,11 @@ window.addEventListener('resize',()=>{
 </div>
 
           </Link>
-          <button  onClick={()=>{addtocart(ele)}}   className='bg-yellow-400 mb-2  yellowe  rounded-2xl w-fit lg:w-[7rem] px-2 text-[2.3vw]     md:text-[1.5vw] lg:text-[1.2vw] py-1'>Add to cart</button>
+          <button  onClick={()=>{addtocart(ele)}}   className='bg-yellow-400 mb-2  yellowe  rounded-2xl w-fit lg:w-fit px-2 text-[2.3vw]     md:text-[1.5vw] lg:text-[1.2vw] py-1'>Add to cart</button>
 </div>      
-          ))}</div>
+          )):<div className='ml-10  text-[1rem]  lg:text-[2rem]  mt-3'>No search result..</div>}
+
+</div>
     </div></div>
   
  
