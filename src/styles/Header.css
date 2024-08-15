@@ -45,7 +45,7 @@ justify-content:space-around;
 
 
         margin-right: 3vw;
-        width: 75vw;
+        min-width: 60vw;
     }
 .mainheader{
 
@@ -54,15 +54,15 @@ justify-content:space-around;
 }
 .selectcategory{
 
-    min-width:32% ;
+    min-width:25% ;
 }
 .SearchIn{
 
-    width:50%;
+    min-width:52%;
 }
 .searchbox{
 
-    width: 18%;;
+    min-width: 23%;
 }
 
 }
