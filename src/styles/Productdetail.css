@@ -1,0 +1,63 @@
+@media (max-width:740px) {
+    
+
+.productdetailbox{
+
+flex-direction: column;
+min-height:110vw;
+
+}
+.detailsec{
+
+    width: 90%;
+}
+
+}
+@media (max-width:585px) {
+
+    .productdetailbox{
+
+        min-height:130vw;
+    }
+    
+}
+
+@media (max-width:472px) {
+
+    .productdetailbox{
+
+        min-height:180vw;
+    }
+    .detailsec{
+
+        width: 100%;
+    }
+    
+}
+
+
+
+
+
+
+@media (max-width:380px) {
+
+    .productdetailbox{
+
+        min-height:220vw;
+    }
+    .detailsec{
+
+        width: 100%;
+    }
+    
+}
+@media (max-width:325px) {
+
+    .productdetailbox{
+
+        min-height:250vw;
+    }
+
+    
+}
