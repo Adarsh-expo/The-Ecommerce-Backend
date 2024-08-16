@@ -28,7 +28,7 @@ useEffect(()=>{
 const callsingleproduct=async()=>{
 
 const res=await axios
-.get(`http://localhost:3000/api/v1/product/singleproduct/${productslug}`)
+.get(`https://ecommerce-backend-teif.onrender.com/api/v1/product/singleproduct/${productslug}`)
 
 getsingleproduct(res.data[0])
 console.log(res.data[0])
