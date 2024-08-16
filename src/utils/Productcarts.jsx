@@ -140,9 +140,9 @@ window.addEventListener('resize',()=>{
            
          </div>
        </div>
-       <div className='flex w-[80%]  productright    h-[88vh] overflow-y-scroll flex-wrap items-center justify-center gap-[3rem]'>
+       <div className='flex w-[80%]  productright  pb-16   h-[88vh] overflow-y-auto flex-wrap   items-center justify-center gap-[3rem]'>
          {categproduct.map((ele, index) => (
-        <div  className='mt-[2rem] flex flex-col gap-2  items-center rounded-lg hover:scale-105 shadow-lg  w-[30vw]   md:w-[24vw]    lg:w-[15vw] min-h-[25vw]'        key={index} >
+        <div  className='mt-[2rem] flex flex-col gap-2   items-center rounded-lg hover:scale-105 shadow-lg  w-[30vw]   md:w-[24vw]    lg:w-[15vw] min-h-[25vw]'        key={index} >
           <Link    to={`/products/${params.category}/${ele.slug}`}    className=' flex items-center justify-center text-center  flex-col '>
              <img className='object-contain w-[96%]  lg:w-[90%] h-[15vw]' src={ele.photo} alt={ele.name} />
              <span className='text-[3vw] md:text-[2vw] lg:text-[1.5vw] mx-2 my-1 text-zinc-700'>{ele.name.slice(0,35)}...</span>

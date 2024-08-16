@@ -93,11 +93,11 @@ catch(err){
     key: 'status',}
     ]
   return (
-    <div>
+    <div className='h-screen w-screen overflow-y-hidden'>
 <Header/>
 <div className='flex'>
 <Adminmenu/>
-<div className='w-[75vw]'>
+<div className='w-[75vw] overflow-y-auto h-[88vh]'>
 {Allorders.length>0 && Allorders.map((ele,index)=>
 
 <>

@@ -51,7 +51,7 @@ function App() {
   <Route path='/products/:subcategory/:productslug' element={<Productdetail/>} />
   <Route path='/Bestseller/headphone/:productslug' element={<Productdetail/>} />
   <Route path='/Paymentsuccessfull' element={<Ordersuccessfull/>} />
-  <Route path='viewcart' element={<Loginsuggest/>} />
+  <Route path='/viewcart' element={<Loginsuggest/>} />
 
 
 

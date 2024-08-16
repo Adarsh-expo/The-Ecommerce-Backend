@@ -90,7 +90,7 @@ try{const res=await axios.post('https://ecommerce-backend-teif.onrender.com/api/
 console.log( res.data.status)
 
 des(insertdata({}))
-
+des(addtocart())
 toast.success("Successfully loggedout",customToastOptions)
 
 setTimeout(()=>{navo('/')},2500)
@@ -117,7 +117,7 @@ console.log(totalincart,value)
 
 {/* 
    Mid section */}
-    <div  className='input flex justify-center  md:w-[40vw] w-[50vw]    lg:w-[35vw] lg:h-[4rem] md:h-[3rem] h-[2.3rem]
+    <div  className='input flex justify-center  md:w-[40vw] w-[55vw]    lg:w-[35vw] lg:h-[4rem] md:h-[3rem] h-[2.3rem]
       items-center bg-white  rounded-lg'> 
     
     <select onChange={(e)=>{setcategsearch(e.target.value);setringcolor(true)}} className='h-[100%] selectcategory rounded-lg lg:text-[1.3vw] text-[2.3vw]     w-[24%] outline-none '>

@@ -90,7 +90,7 @@ useEffect(()=>{des(addtocart())},[runner2,runner3,runner4])
             </button>
           </div>
           </div>
-             <div className=' items-center  flex lg:gap-[1rem] gap-1'>
+             <div className=' items-center  mr-[-0.8rem] flex lg:gap-[1rem] gap-1'>
               <button  onClick={()=>{sequentialdelete(ele._id)}} className='bg-orange-500 rounded h-[4vw]  md:h-[2.3vw]  lg:h-[2.3vw] 
              flex justify-center items-center     w-[4vw]   md:w-[2.3vw] lg:w-[2.3vw] shadow-2xl text-white  text-[5.3vw] md:text-[2vw]  lg:text-[1.6vw] '>-</button>
              <span className='lg:text-[1vw]  md:text-[1vw] text-[2.6vw] font-normal text-zinc-700'>{ele.choosenquantity}</span>

@@ -38,11 +38,13 @@ useEffect(()=>{
 
 <Slider {...settings}  > 
  {similarproduct?.map((ele)=>
-<div className='flex  shadow-lg  rounded flex-col items-center  mr-[7rem] w-[25%] lg:h-[20vw] h-[45vw] md:h-[25vw] mb-3   '>
-     <img className=' h-[50%] w-[95%] mx-auto object-contain' src={ele.photo}/>
+<div className='flex  shadow-lg  rounded flex-col items-center  mr-[7rem] w-[40%] lg:h-[20vw] h-[45vw] md:h-[25vw] mb-3   '>
+    
+    <Link  to={`/products/${subcategory}/${ele.slug}`} className='w-[100%] h-[100%]'><img className=' h-[50%] w-[95%] mx-auto object-contain' src={ele.photo}/></Link>
+     
     <div className='flex flex-col items-center w-[100%] '>
          <Link  to={`/products/${subcategory}/${ele.slug}`}    className='text-[2vw] hover:text-red-500  lg:text-[1.3vw] text-center '>{ele.name.slice(0,30)}..</Link>
-    <span className='text-[0.6rem] lg:text-[1.4vw] md:text-[2vw]   '>${ele.price}</span>
+    <span className='text-[0.7rem] lg:text-[1.4vw] md:text-[2vw]   '>${ele.price}</span>
    
     <button onClick={()=>{addtocartbackend(ele)}} className='bg-yellow-500 mb-2 px-2 min-h-[1.4rem]    min-w-[3rem] text-[2vw] lg:text-[1.3vw]   text-white rounded-xl '   >Add to cart </button>
     

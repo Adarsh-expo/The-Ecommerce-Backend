@@ -12,7 +12,7 @@ function Home() {
 
   document.title="Homepage"
   return (
-    <div className=' w-[100vw]  overflow-x-hidden h-[100vh] '><Header/>
+    <div className=' w-[100vw]  overflow-x-hidden  h-[100vh] '><Header/>
     
     <div className='  bg-zinc-300  theback  items-center mt-[2rem] basis-2/3 w-[95%] mx-auto rounded-2xl  flex  min-h-[500px]   '> 
     <div className='flex flex-col ml-[1rem] rrr   h-[100%]  '>
