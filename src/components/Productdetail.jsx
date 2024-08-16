@@ -28,7 +28,7 @@ useEffect(()=>{
 const callsingleproduct=async()=>{
 
 const res=await axios
-.get(`https://ecommerce-backend-teif.onrender.com/api/v1/product/singleproduct/${productslug}`)
+.get(`http://localhost:3000/api/v1/product/singleproduct/${productslug}`)
 
 getsingleproduct(res.data[0])
 console.log(res.data[0])
@@ -42,7 +42,7 @@ callsingleproduct()
 useEffect(()=>{
 const similarproduct=async()=>{
 console.log(singleproduct)
-if(singleproduct._id){const res=await axios.get(`https://ecommerce-backend-teif.onrender.com/api/v1/product/similarproduct/${singleproduct._id}/${singleproduct.categoryid}`)
+if(singleproduct._id){const res=await axios.get(`http://localhost:3000/api/v1/product/similarproduct/${singleproduct._id}/${singleproduct.categoryid}`)
 
 setsimilarproduct(res.data);
 console.log(res.data)}
@@ -94,7 +94,7 @@ useEffect(()=>{des(addtocart())},[runner])
           
           </div>
     
-<div className='w-[100vw] text-center mb-3 mt-[3vw] font-semibold text-zinc-800 text-[2vw]'>You may also like</div>
+<div className='w-[100vw] text-center mb-3 mt-[3vw] font-semibold text-zinc-800  lg:text-[2vw] md:rtext-[3vw] text-[4vw]'>Get the simalr Products</div>
 
 
 
