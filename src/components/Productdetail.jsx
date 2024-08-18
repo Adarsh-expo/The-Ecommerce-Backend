@@ -13,6 +13,7 @@ import addtocart from '../Store/actions/cartaction'
 import { useAddToCartBackend } from '../utils/Addtocartbackend'
 import Starcomponent from '../utils/Starcomponent'
 import '../styles/Productdetail.css'
+import loader from '/loading-load.gif'
 
 
 function Productdetail() {
@@ -28,7 +29,7 @@ useEffect(()=>{
 const callsingleproduct=async()=>{
 
 const res=await axios
-.get(`https://ecommerce-backend-teif.onrender.com/api/v1/product/singleproduct/${productslug}`)
+.get(`http://localhost:3000/api/v1/product/singleproduct/${productslug}`)
 
 getsingleproduct(res.data[0])
 console.log(res.data[0])
@@ -42,7 +43,7 @@ callsingleproduct()
 useEffect(()=>{
 const similarproduct=async()=>{
 console.log(singleproduct)
-if(singleproduct._id){const res=await axios.get(`https://ecommerce-backend-teif.onrender.com/api/v1/product/similarproduct/${singleproduct._id}/${singleproduct.categoryid}`)
+if(singleproduct._id){const res=await axios.get(`http://localhost:3000/api/v1/product/similarproduct/${singleproduct._id}/${singleproduct.categoryid}`)
 
 setsimilarproduct(res.data);
 console.log(res.data)}
@@ -72,10 +73,10 @@ useEffect(()=>{des(addtocart())},[runner])
        md:min-h-[30vw]    lg:min-h-[30vw]'>   
     
 <img className='h-[28vw] imagedetailsec   object-contain w-[45%]'
-   src={singleproduct.photo}  />
+   src={singleproduct.photo?singleproduct.photo:loader}  />
    <div className=' flex flex-col detailsec    px-3   rounded-lg pl-4  mb-[3rem]  min-h-[30vw] w-[60%]'>
       <span className='lg:text-[1.7vw]  text-zinc-800 '>{singleproduct.name}</span>
-<div className='flex gap-2 items-center'><Starcomponent  star={2}/><span className='text-zinc-400 lg:text-[1rem] md:text-[0.6rem] text-[0.5rem]'>(28 Customer Review)</span></div>
+<div className='flex gap-2 items-center'><Starcomponent  star={2}/><span className='text-zinc-400 lg:text-[1rem] md:text-[0.6rem] text-[0.5rem]'>({singleproduct.totalreviews} Customer Review)</span></div>
       <span className='text-[0.6rem] lg:text-[1rem]  mt-6 flex flex-col    '><span className='font-semibold '>Description:</span>{singleproduct.description}
       </span>
       <div className='flex  gap-[30%] mt-3 items-center '>
