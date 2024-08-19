@@ -28,12 +28,15 @@ const[singleproduct,getsingleproduct]=useState({});
 const[similarproduct,setsimilarproduct]=useState([]);
 useEffect(()=>{
 const callsingleproduct=async()=>{
-
-const res=await axios
+try{const res=await axios
 .get(`https://ecommerce-backend-teif.onrender.com/api/v1/product/singleproduct/${productslug}`)
 
 getsingleproduct(res.data[0])
-console.log(res.data[0])
+console.log(res.data[0])}
+catch(err){
+
+  console.log(err.message)
+}
 
 
 }
