@@ -15,7 +15,7 @@ function Commentandrating({feedbackdetail=[],avgrating}) {
     <div className='flex pl-2 w-[100%]'>  
 
 
-<div className='flex flex-col '><div className='lg:text-[1.5vw] md:text-[2vw] text-[4vw]'>Average Review</div><Starcomponent star={avgrating}/><div className='text-[3vw]  md-text-[2.2vw] lg:text-[2vw]'>({avgrating})</div></div>
+<div className='flex flex-col '><div className='lg:text-[1.5vw] md:text-[2vw] text-[4vw]'>Average Rating</div><Starcomponent star={avgrating}/><div className='text-[3vw]  md-text-[2.2vw] lg:text-[2vw]'>({avgrating})</div></div>
 <div className='flex mx-auto w-[55%]  h-fit flex-col'> {feedbackdetail.length?feedbackdetail.map((ele,index)=> 
      <div className='flex     w-[100%] min-h-[15vw] flex-col mt-3'>
         <div className='flex items-center   '><i class="ri-account-circle-fill lg:text-[2vw]"></i>

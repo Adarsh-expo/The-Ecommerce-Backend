@@ -104,7 +104,7 @@ catch(err){
 
 <Table     pagination={{
           position: ['none'],
-        }}    dataSource={[{buyer:ele.buyer.username,date:moment(ele.createdAt).fromNow(),payment:ele.payment.amount,quantity:ele.quantity,
+        }}    dataSource={[{buyer:ele.buyer?.username,date:moment(ele.createdAt).fromNow(),payment:ele.payment.amount,quantity:ele.quantity,
 
 status:<Select  onChange={(value)=>{handlechange(value,ele.payment.razorpayorderid)}}    options={[
     {
