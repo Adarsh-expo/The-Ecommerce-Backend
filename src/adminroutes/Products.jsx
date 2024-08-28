@@ -86,25 +86,12 @@ const array=productdata.map((ele)=>({...ele,pic:<img   className='h-[3rem] ml-3 
 
 
   return (
-    <><Header/>
+    <div className='h-screen w-screen overflow-y-hidden'><Header/>
     <div className='flex relative '>
     
     <Adminmenu/>
-    <div className='shadow-xl  w-[15vw] items-center  flex flex-col '>
-    {categoriesdata.map((ele)=>
-      <div className='flex flex-col'>
-      <div    onClick={()=>{subcateg(ele.slug)}}  className='text-[1.4rem] text-center   w-[100%]  relative'>
-        {ele.name} 
-        </div> 
-         <div className='w-[100%]'>{allsubcateg.map((ele)=><span>{ele.name}</span>)}</div>
-         
-         
-         </div>    )} 
-       
-       
-       
-        </div>
- <div className='w-[65vw]  h-[80vh]    overflow-y-auto    flex flex-col items-center gap-[3rem] pt-[3rem]'>
+    
+ <div className='  h-[80vh]    overflow-y-auto  w-max    flex flex-col items-center gap-[3rem] pt-[3rem]'>
 <span className='mt-[1rem] text-[2vw] flex justify-center gap-[2rem]   items-center ml-[0.5rem]'> Products  </span>
    <Reactable columns={column} data={array}/> 
   </div>
@@ -116,7 +103,7 @@ const array=productdata.map((ele)=>({...ele,pic:<img   className='h-[3rem] ml-3 
 
 
 
-</div> </>
+</div> </div>
   )
 }
 

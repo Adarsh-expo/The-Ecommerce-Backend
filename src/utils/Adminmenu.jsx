@@ -1,12 +1,17 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
-function Adminmenu() {
+import '../styles/Createproduct.css'
+function Adminmenu({size,setsize}) {
     const loc=useLocation();
-console.log(loc)
-
+console.log(size)
+function sizecontrol(er){
+  setsize(500);
+  }
   return (
-    <div className='admin-menu h-[88vh] mr-[2rem]  basis-1/5    shadow-xl'>
+    <div className={`sidepanel3 h-[88vh] mr-[2rem]  basis-1/5  ${size<501 &&"ml-[-15rem]"}  shadow-xl`}>
+      <button   onClick={()=>{sizecontrol(500)}}  className={`ml-[90%]  ${size>501 &&"hidden" }    mt-[2px]`}><i class="ri-close-line text-red-500 "></i></button>
+
 
 <div className='mt-[2rem] text-[2vw]  ml-[0.5rem]'>Admin Dashboard</div>
 <div className='w-[20vw] h-[50vh]  flex flex-col gap-6    mt-[2rem] ml-[1.3rem] font-light bg-whitem  '>

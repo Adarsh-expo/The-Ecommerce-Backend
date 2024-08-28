@@ -46,7 +46,7 @@ window.addEventListener('resize',()=>{
       
     <button onClick={()=>{setsize(501)}} className='absolute top-1 left-1 hover:scale-105'> <i className={`ri-menu-line  text-[1.4rem] text-red-600 ${size>500 && "hidden"} `}></i></button>
     <Usermenu size={size} setsize={setsize} />
-  <div className='  flex flex-col gap-[2rem] productright2  mt-2 h-[80vh]  overflow-y-auto  w-[80vw]'>
+  <div className='  flex flex-col gap-[2rem] productright2  bg-[#1E1F24] mt-2 h-[80vh]  overflow-y-auto  w-[80vw]'>
 
 {order.length ? order.map((ele,index)=><Orderboxcart  key={index}  wholedata={ele} />):<div className=' mt-4  ml-8  lg:text-[1.5vw]
  md:text-[2vw] text-[4vw]'>No order history to show</div>}

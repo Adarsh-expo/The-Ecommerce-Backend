@@ -6,11 +6,12 @@ import Header from './Header';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import { Link } from 'react-router-dom';
-import { Inserttocart } from '../Store/reducers/cartreducer';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { customToastOptions } from './Header';
 import  '../styles/Searchproduct.css'
+import { useAddToCartBackend } from './Addtocartbackend';
+import addtocart from '../Store/actions/cartaction';
 function Searchproduct() {
 const[pricerange,setpricerange]=useState([100,13000])
 
@@ -49,11 +50,7 @@ console.log("jjjj")
 },[pricerange])
 
 
-const addtocart=async(ele)=>{
-  const ele2={...ele,choosenquantity:1}
-des(Inserttocart(ele2))
-toast.success("Added to cart",customToastOptions)
-}
+
 
 
 
@@ -69,7 +66,10 @@ window.addEventListener('resize',()=>{
 
 },[])
 
-
+const{addtocartbackend, runner}=useAddToCartBackend();
+useEffect(()=>{
+des(addtocart())
+},[runner])
 
   return (<div className='overflow-x-hidden h-screen w-screen overflow-y-hidden'> <Header/>
     <div className='flex relative'>
@@ -106,7 +106,7 @@ window.addEventListener('resize',()=>{
 </div>
 
           </Link>
-          <button  onClick={()=>{addtocart(ele)}}   className='bg-yellow-400 mb-2  yellowe  rounded-2xl w-fit lg:w-fit px-2 text-[2.3vw]     md:text-[1.5vw] lg:text-[1.2vw] py-1'>Add to cart</button>
+          <button  onClick={()=>{addtocartbackend(ele)}}   className='bg-yellow-400 mb-2  yellowe  rounded-2xl w-fit lg:w-fit px-2 text-[2.3vw]     md:text-[1.5vw] lg:text-[1.2vw] py-1'>Add to cart</button>
 </div>      
           )):<div className='ml-10  text-[1rem]  lg:text-[2rem]  mt-3'>No search result..</div>}
 

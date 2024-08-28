@@ -97,7 +97,7 @@ const array=categoriesdata.map((ele,index)=>({...ele,action:<div key={index}><Li
 
   
   return (
-    <><Header/>
+    <div className='h-screen w-screen overflow-x-hidden overflow-y-hidden'><Header/>
     <div className='flex relative '>
     
     <Adminmenu/>
@@ -113,7 +113,7 @@ const array=categoriesdata.map((ele,index)=>({...ele,action:<div key={index}><Li
 
 
 
-</div> </>
+</div> </div>
   )
 }
 

@@ -17,7 +17,7 @@ export const useAddToCartBackend = () => {
         try {
             const { data: { success,message } } = await axios.post(
                 'https://ecommerce-backend-teif.onrender.com/api/v1/Inserttocart',
-                { id: ele2._id, choosenquantity: ele2.choosenquantity },
+                { id: ele2._id, choosenquantity: ele2.choosenquantity,quantity:ele2.quantity },
                 { withCredentials: true }
             );
             console.log(message,success);

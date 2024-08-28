@@ -43,6 +43,7 @@ const navo=useNavigate()
 
 
     const user=useSelector((state)=>state.User.value)
+    console.log(user)
     
 const {totalincart,value}=useSelector((state)=>state.Cart)
 
@@ -165,10 +166,11 @@ console.log(totalincart,value)
        
       
        
-        <Link to={  totalincart?"/user/cart":"/viewcart?Exploremode=true"}      className='relative  '>
+        <Link to={  user._id?"/user/cart":"/viewcart?Exploremode=true"}      className='relative  '>
           <i className="ri-shopping-bag-line     "></i>
-         {totalincart!=0&&   <span className='text-white absolute lg:h-[2rem] h-[1rem] w-[1rem] md:w-[1.5rem] md:h-[1.5rem]
-         text-center lg:w-[2rem]  flex justify-center items-center   bottom-[50%] left-[56%] rounded-full md:text-[1.8vw] lg:text-[1.4vw] text-[2.4vw]   bg-red-600'>
+         {user._id &&   <span className='text-white absolute lg:h-[2rem] h-[1rem] w-[1rem] md:w-[1.5rem] md:h-[1.5rem]
+         text-center lg:w-[2rem]  flex justify-center items-center   bottom-[50%] left-[56%] rounded-full md:text-[1.8vw] 
+         lg:text-[1.4vw] text-[2.4vw]   bg-red-600'>
           {totalincart}</span>}
         
            
